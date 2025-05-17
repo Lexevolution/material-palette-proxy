@@ -1,15 +1,2 @@
-# Elysia with Bun runtime
-
-## Getting Started
-To get started with this template, simply paste this command into your terminal:
-```bash
-bun create elysia ./elysia-example
-```
-
-## Development
-To start the development server run:
-```bash
-bun run dev
-```
-
-Open http://localhost:3000/ with your browser to see the result.
+# Material Palette Proxy
+Simple rest thing that gets me a Material You colour palette from a url. Made mostly for a personal project. Made using [bun](https://bun.sh).
