@@ -11,9 +11,14 @@ const app = new Elysia()
     return status (400, "Incorrect syntax for dark mode. Either true or false");
   }
 
-  const colourscheme = await $`/home/alex/.cargo/bin/matugen color hex "${colour}" --json hex`.json();
+  const colourschemes = await $`/home/alex/.cargo/bin/matugen color hex "${colour}" --json hex`.json();
 
-  return dark.toLowerCase() == "true" ? colourscheme.colors.dark : colourscheme.colors.light
+  const colourscheme = dark.toLowerCase() == "true" ? colourschemes.colors.dark : colourschemes.colors.light
+  let responseData = "";
+  Object.values(colourscheme).forEach(colourValue => {
+    responseData += colourValue + "\n";
+  });
+  return responseData.trim()
 })
 .listen(60067);
 
