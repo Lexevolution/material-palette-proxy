@@ -15,8 +15,8 @@ const app = new Elysia()
 
   const colourscheme = dark.toLowerCase() == "true" ? colourschemes.colors.dark : colourschemes.colors.light
   let responseData = "";
-  Object.values(colourscheme).forEach(colourValue => {
-    responseData += colourValue + "\n";
+  Object.entries(colourscheme).forEach(colourValue => {
+    responseData += `${colourValue[0]}:${colourValue[1]}\n`;
   });
   return responseData.trim()
 })
